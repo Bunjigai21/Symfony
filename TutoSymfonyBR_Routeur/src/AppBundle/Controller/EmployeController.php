@@ -29,7 +29,7 @@ class EmployeController extends Controller
      * @Route(
      *     path="/Employe/{nom}",
      *     name="employenom_voir",
-     *     requirements = {"nom":"^[B][a-zA-Z].[^0-9]+"}
+     *     requirements = {"nom":"^[B][^0-9!:;.,?_+=*}&{|]+"}
      *      )
      */
     public function nomAction($nom)
