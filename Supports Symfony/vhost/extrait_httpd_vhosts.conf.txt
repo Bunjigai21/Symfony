@@ -1,0 +1,9 @@
+<VirtualHost *:80>
+	ServerName toto
+	DocumentRoot "t:/toto"
+	<Directory  "t:/toto/">
+		Options +Indexes +Includes +FollowSymLinks +MultiViews
+		AllowOverride All
+		Require local
+	</Directory>
+</VirtualHost>
