@@ -43,13 +43,13 @@
       <file leaf-file-name="LectureCtrlController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/LectureCtrlController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="69" column="1" lean-forward="false" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+            <state relative-caret-position="-236">
+              <caret line="27" column="91" lean-forward="false" selection-start-line="27" selection-start-column="91" selection-end-line="27" selection-end-column="91" />
               <folding>
                 <element signature="e#42#100#0#PHP" expanded="true" />
-                <element signature="e#990#1024#0#PHP" expanded="true" />
-                <element signature="e#1611#1644#0#PHP" expanded="true" />
-                <element signature="e#2354#2393#0#PHP" expanded="true" />
+                <element signature="e#1032#1066#0#PHP" expanded="true" />
+                <element signature="e#1695#1728#0#PHP" expanded="true" />
+                <element signature="e#2480#2519#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,8 +63,8 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/LectureCtrl/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/LectureCtrl/view.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/LectureCtrl/autreParam.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/LectureCtrlController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Employe.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/LectureCtrlController.php" />
       </list>
     </option>
   </component>
@@ -194,6 +194,28 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutoSymfonyBR_TpFormulaires" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutoSymfonyBR_TpFormulaires" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -278,12 +300,12 @@
       <updated>1481531099347</updated>
       <workItem from="1481531110524" duration="6211000" />
       <workItem from="1481537685161" duration="47000" />
-      <workItem from="1481537743357" duration="376000" />
+      <workItem from="1481537743357" duration="1577000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6634000" />
+    <option name="totallyTimeSpent" value="7835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -345,9 +367,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#42#100#0#PHP" expanded="true" />
-            <element signature="e#990#1024#0#PHP" expanded="true" />
-            <element signature="e#1611#1644#0#PHP" expanded="true" />
-            <element signature="e#2354#2393#0#PHP" expanded="true" />
+            <element signature="e#1032#1066#0#PHP" expanded="true" />
+            <element signature="e#1695#1728#0#PHP" expanded="true" />
+            <element signature="e#2480#2519#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -376,9 +398,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#42#100#0#PHP" expanded="true" />
-            <element signature="e#990#1024#0#PHP" expanded="true" />
-            <element signature="e#1611#1644#0#PHP" expanded="true" />
-            <element signature="e#2354#2393#0#PHP" expanded="true" />
+            <element signature="e#1032#1066#0#PHP" expanded="true" />
+            <element signature="e#1695#1728#0#PHP" expanded="true" />
+            <element signature="e#2480#2519#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -404,6 +426,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/LectureCtrl/autreParam.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Employe.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -414,23 +444,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/LectureCtrl/autreParam.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/LectureCtrlController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="69" column="1" lean-forward="false" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
+        <state relative-caret-position="-236">
+          <caret line="27" column="91" lean-forward="false" selection-start-line="27" selection-start-column="91" selection-end-line="27" selection-end-column="91" />
           <folding>
             <element signature="e#42#100#0#PHP" expanded="true" />
-            <element signature="e#990#1024#0#PHP" expanded="true" />
-            <element signature="e#1611#1644#0#PHP" expanded="true" />
-            <element signature="e#2354#2393#0#PHP" expanded="true" />
+            <element signature="e#1032#1066#0#PHP" expanded="true" />
+            <element signature="e#1695#1728#0#PHP" expanded="true" />
+            <element signature="e#2480#2519#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

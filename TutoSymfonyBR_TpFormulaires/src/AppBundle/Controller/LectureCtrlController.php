@@ -25,7 +25,7 @@ class LectureCtrlController extends Controller
             ->add('num',NumberType::class)
             ->add('nom',TextType::class)
             ->add('prenom',TextType::class)
-            ->add('dateNaissance',DateType::class)
+            ->add('dateNaissance',DateType::class, array("years"=>range(1970,date('Y')-18)))
             ->add('Enregistrer',SubmitType::class)
             ->getForm();
         return $this->render('@App/LectureCtrl/index.html.twig',array(
@@ -42,7 +42,7 @@ class LectureCtrlController extends Controller
             ->add('num',NumberType::class)
             ->add('nom',TextType::class)
             ->add('prenom',TextType::class)
-            ->add('dateNaissance',DateType::class)
+            ->add('dateNaissance',DateType::class, array("years"=>range(1970,date('Y')-18)))
             ->add('Enregistrer',SubmitType::class)
             ->getForm();
         return $this->render('@App/LectureCtrl/view.html.twig',array(
@@ -59,7 +59,7 @@ class LectureCtrlController extends Controller
             ->add('num',NumberType::class)
             ->add('nom',TextType::class)
             ->add('prenom',TextType::class)
-            ->add('dateNaissance',DateType::class)
+            ->add('dateNaissance',DateType::class, array("years"=>range(1970,date('Y')-18)))
             ->add('Enregistrer',SubmitType::class)
             ->getForm();
         $sport='Rugby';
