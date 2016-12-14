@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<HTML>
+    <HEAD>
+        <meta charset="utf-8"/>
+        {% block stylesheets %} {%  endblock %}
+        {% block css %}{% endblock %}
+        <title>{%  block title %}{% endblock %}</title>
+    </HEAD>
+<body>
+    <header id="headerSite">
+        <aside id="logo"></aside>
+        <nav id ="menuHeader">
+            <ul>{% block liens %}{% endblock %}</ul>
+        </nav>
+        <div class="separateurHorizontal"></div>
+    </header>
+    <section id="descriptifDivers">
+        <h1>{% block head %}{% endblock %}</h1>
+        <h2>{% block body %}{% endblock %}</h2>
+        <p>{% block widgets %}{% endblock %}</p>
+        <H1>Bravo</H1>
+    </section>
+<footer id="footerSite">
+    {% block footer %}{% endblock %}
+</footer>
+</body>
+</HTML>

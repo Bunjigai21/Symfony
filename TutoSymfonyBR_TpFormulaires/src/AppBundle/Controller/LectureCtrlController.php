@@ -10,13 +10,14 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\component\httpfoundation\request;
 use AppBundle\Entity\Employe;
 
 class LectureCtrlController extends Controller
 {
     /**
-     * @Route("/index")
-     * name:index
+     * @Route(path="/index",
+     * name="LectureCtrl_index")
      */
     public function indexAction()
     {
@@ -32,8 +33,8 @@ class LectureCtrlController extends Controller
             'leFormulaire' =>$formulaire->createView()));
     }
     /**
-     * @Route("/view")
-     * name:view
+     * @Route(path="/view",
+     * name="LectureCtrl_view")
      */
     public function viewAction()
     {
@@ -49,8 +50,9 @@ class LectureCtrlController extends Controller
             'leFormulaire' =>$formulaire->createView()));
     }
     /**
-     * @Route("/afficheEmpParam")
-     * name:lectureCtrl_afficheEmpParam
+     * @Route(path ="/afficheEmpParam",
+     * name="LectureCtrl_afficheEmpParam"
+     * )
      */
     public function afficheEmpParamAction()
     {
@@ -66,5 +68,51 @@ class LectureCtrlController extends Controller
         $voitures=array('Ford', 'Renault','Peugeot');
         return $this->render('@App/LectureCtrl/autreParam.html.twig',array(
             'leFormulaire' =>$formulaire->createView(),'sport'=>$sport,'voitures'=>$voitures));
+    }
+    /**
+     * @Route(path="/afficheEmpTwig",
+     * name="LectureCtrl_afficheEmpTwig"
+     *     )
+     */
+    public function afficheEmpTwigAction()
+    {
+
+
+        $employe = new Employe(1,"Dupont","Jean",new \DateTime('1988-12-25'));
+
+        $employe->setPrenom("Jean");
+        $employe->setDateNaissance(new \DateTime('today'));
+
+        $formulaire = $this->createFormBuilder($employe)
+            ->add('num',NumberType::class)
+            ->add('nom',TextType::class)
+            ->add('prenom',TextType::class)
+            ->add('dateNaissance',DateType::class, array("years"=>range(1970,date('Y')-18)))
+            ->add('Enregistrer',SubmitType::class)
+            ->getForm();
+        return $this->render('@App/LectureCtrl/afficheEmpTwig.html.twig',array(
+            'uneEntree' =>'je viens du controller','leFormulaire'=>$formulaire->createView()));
+    }
+
+    /**
+     * @Route (path="/afficheEmpTwigCss",
+     *     name="LectureCtrl_AfficheEmpTwigCss"
+     * )
+     */
+    public function afficheEmpTwigCssAction(){
+        $employe = new Employe(1,"Dupont","Jean",new \DateTime('1988-12-25'));
+
+        $employe->setPrenom("Jean");
+        $employe->setDateNaissance(new \DateTime('today'));
+
+        $formulaire = $this->createFormBuilder($employe)
+            ->add('num',NumberType::class)
+            ->add('nom',TextType::class)
+            ->add('prenom',TextType::class)
+            ->add('dateNaissance',DateType::class, array("years"=>range(1970,date('Y')-18)))
+            ->add('Enregistrer',SubmitType::class)
+            ->getForm();
+        return $this->render('@App/LectureCtrl/afficheEmpTwigCss.html.twig',array(
+            'uneEntree' =>'je viens du controller','leFormulaire'=>$formulaire->createView()));
     }
 }

@@ -33,7 +33,7 @@ class Employe {
         return $this->dateNaissance;
     }
     public function setDateNaissance($dateNaissance){
-        $this->$dateNaissance =$dateNaissance;
+        $this->dateNaissance =$dateNaissance;
     }
     /*public function getSport(){
         return $this->sport;
