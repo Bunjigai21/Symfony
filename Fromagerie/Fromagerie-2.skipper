@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<skipper version="3.2.8.1347" mvc="Symfony3" orm="Doctrine2" name="Fromagerie" uuid="8f1d6786-1bde-4a72-89c8-3652c5827963">
+  <module name="\MainBundle" local-name="MainBundle" namespace="\" export-format="Doctrine2Php" export-path="src/AppBundle" uuid="0fdd1c9b-232e-4df1-adba-1b5d70c9d158">
+    <entity name="\SECTEUR" local-name="SECTEUR" namespace="\" uuid="a9955beb-9227-48b1-b39b-7ca0f758a915">
+      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="b94bdd18-06aa-45e7-a899-88c237d7b3e8"/>
+      <field name="libelle" type="string" size="255" uuid="b0e5a101-9945-4b4c-b7bc-d9a222f3d249"/>
+      <field name="appartenir" type="string" required="true" uuid="434d02ab-2d96-4b7f-95fe-de7a7e0561a8"/>
+      <field name="producteur_id" type="integer" uuid="92eb8b82-d066-4a9c-830c-7dc0b16ba8f4"/>
+    </entity>
+    <association from="\SECTEUR" to="\PRODUCTEUR" caption="appartenir" owner-alias="secteur" inverse-alias="pRODUCTEUR" many-owner="true" many-inverse="false" uuid="3654df22-a9a9-4eeb-ba94-dcac635f3a5a">
+      <association-field from="producteur_id" to="id"/>
+    </association>
+    <entity name="\RAMASSEUR" local-name="RAMASSEUR" namespace="\" uuid="f7834594-db2c-4d21-9f53-e5d8c9508430">
+      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="8264846a-fc66-4fc9-a5a9-5315f8d495bf"/>
+      <field name="nom" type="string" uuid="c0faabc9-e935-486d-b19a-9b7abda57394"/>
+      <field name="prenom" type="string" uuid="b7efde71-e8e2-429b-aadb-b9d056b93019"/>
+      <field name="adresse_rue_1" type="string" uuid="f293c791-053b-4d8b-9f9a-820c660742df"/>
+      <field name="adresse_rue_2" type="string" uuid="03b51b64-5f26-42d3-b13d-7facd28cd84b"/>
+      <field name="cp" type="string" uuid="8acdea12-ecd8-4dae-ac87-61405e614dae"/>
+      <field name="ville" type="string" uuid="82a5eebc-71d5-4b3e-8927-a44f2bc6a549"/>
+      <field name="secteur_id" type="integer" uuid="cac0a688-69cb-4077-9354-eecf0f246c42"/>
+    </entity>
+    <association from="\RAMASSEUR" to="\SECTEUR" caption="affecter" owner-alias="rAMASSEUR" inverse-alias="sECTEUR" many-owner="true" many-inverse="false" uuid="e8c13670-41b7-474b-a3c7-d6a6a3c2cb72">
+      <association-field from="secteur_id" to="id"/>
+    </association>
+    <entity name="\RAMASSAGE" local-name="RAMASSAGE" namespace="\" uuid="d5e27d8b-ce45-44e9-8164-e65f66913f22">
+      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="1e2f7266-c8d8-42d5-97b2-bf00a3ce2ee5"/>
+      <field name="nbBidon" type="integer" required="true" uuid="411e3466-17a0-4a2a-ac1c-76c38246e54a"/>
+      <field name="nbLitre" type="integer" required="true" uuid="95999fb9-05d3-4dee-9820-0bdffbe2be0d"/>
+      <field name="txMatGrasse" type="integer" uuid="670930dd-80d8-45e9-8ff4-2869fbc7769e"/>
+      <field name="dateRamassage" type="date" required="true" uuid="edfe681d-e324-440e-b4e6-7d2d786cf4da"/>
+      <field name="ramasseur_id" type="integer" uuid="138dfc8b-e81b-4fc8-ab36-4c0eb09320bb"/>
+      <field name="producteur_id" type="integer" uuid="0f5d9cce-8b2b-4f6d-a19a-5b968ddc407a"/>
+    </entity>
+    <association from="\RAMASSAGE" to="\RAMASSEUR" caption="effectue" owner-alias="rAMASSAGE" inverse-alias="rAMASSEUR" many-owner="true" many-inverse="false" uuid="ecc0d3ba-2eff-42e5-a6fe-76a97e642a9a">
+      <association-field from="ramasseur_id" to="id"/>
+    </association>
+    <association from="\RAMASSAGE" to="\PRODUCTEUR" caption="concerner" owner-alias="rAMASSAGE" inverse-alias="pRODUCTEUR" many-owner="true" many-inverse="false" uuid="5cf7aca8-29c9-45a3-b676-348be058ba27">
+      <association-field from="producteur_id" to="id"/>
+    </association>
+    <entity name="\PRODUCTEUR" local-name="PRODUCTEUR" namespace="\" uuid="ba4270c3-df18-4896-b328-e5bf8ecf3314">
+      <field name="id" type="integer" required="true" unique="true" primary="true" auto-increment="true" uuid="a8d1fea6-bffb-4bc7-b3da-062db4c871db"/>
+      <field name="distanceUsine" type="integer" required="true" uuid="34af5406-0581-4f5c-9cab-9fddf8d166a8"/>
+      <field name="nom" type="string" required="true" uuid="4077569f-f16c-4402-a4a5-3922d3903227"/>
+      <field name="prenom" type="string" required="true" uuid="c2f38be0-c43d-411c-9f85-384d625427e0"/>
+      <field name="adresse_rue_1" type="string" required="true" uuid="74f79147-6469-4f9d-86b3-c924858c6c9f"/>
+      <field name="adresse_rue_2" type="string" required="true" uuid="7f56f7fe-218f-4509-a9d2-79f3d87d253f"/>
+      <field name="cp" type="string" required="true" uuid="5133f4b6-420f-4cc1-bad5-45fbe65405cc"/>
+      <field name="ville" type="string" required="true" uuid="0ecdc880-688d-47a0-99a6-43d143a7f736"/>
+      <field name="appartenir" type="string" required="true" uuid="070cb921-8c0e-40cf-888f-da82b4b07e95"/>
+      <field name="ramasseur_id" type="integer" uuid="b1fa5719-0181-4b68-885a-cdbf640efb84"/>
+      <field name="producteur_id" type="integer" uuid="d09b1b5d-fec6-4045-a9dd-48acabad0352"/>
+    </entity>
+    <association from="\PRODUCTEUR" to="\RAMASSEUR" caption="attitrer" owner-alias="pRODUCTEUR" inverse-alias="rAMASSEUR" many-owner="true" many-inverse="false" uuid="7ed4d7af-ecdd-498e-8241-93b60451a05e">
+      <association-field from="ramasseur_id" to="id"/>
+    </association>
+    <association from="\PRODUCTEUR" to="\PRODUCTEUR" caption="distance" owner-alias="pRODUCTEUR2" inverse-alias="pRODUCTEUR" many-owner="true" many-inverse="false" uuid="6d5ef51a-61b7-401d-b93e-251efb61dd19">
+      <association-field from="producteur_id" to="id"/>
+    </association>
+  </module>
+  <visual-data>
+    <association uuid="3654df22-a9a9-4eeb-ba94-dcac635f3a5a" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="#969696"/>
+    <association uuid="5cf7aca8-29c9-45a3-b676-348be058ba27" caption1-position-x="136" caption1-position-y="3" center-position-x="0" center-position-y="0" color="#969696"/>
+    <association uuid="6d5ef51a-61b7-401d-b93e-251efb61dd19" caption1-position-x="1" caption1-position-y="1" center-position-x="0" center-position-y="-50" color="#969696"/>
+    <association uuid="7ed4d7af-ecdd-498e-8241-93b60451a05e" caption1-position-x="1" caption1-position-y="0" center-position-x="0" center-position-y="0" color="#969696"/>
+    <association uuid="e8c13670-41b7-474b-a3c7-d6a6a3c2cb72" caption1-position-x="0" caption1-position-y="0" center-position-x="0" center-position-y="0" color="#969696"/>
+    <association uuid="ecc0d3ba-2eff-42e5-a6fe-76a97e642a9a" caption1-position-x="-89" caption1-position-y="-2" center-position-x="0" center-position-y="0" color="#969696"/>
+    <entity uuid="a9955beb-9227-48b1-b39b-7ca0f758a915" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="423" position-y="21" size-x="0" size-x2="118" size-y="0" size-y2="87"/>
+    <entity uuid="ba4270c3-df18-4896-b328-e5bf8ecf3314" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="780" position-y="173" size-x="0" size-x2="121" size-y="0" size-y2="157"/>
+    <entity uuid="d5e27d8b-ce45-44e9-8164-e65f66913f22" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="349" position-y="353" size-x="0" size-x2="120" size-y="0" size-y2="87"/>
+    <entity uuid="f7834594-db2c-4d21-9f53-e5d8c9508430" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="74" position-y="195" size-x="0" size-x2="118" size-y="0" size-y2="115"/>
+    <module uuid="0fdd1c9b-232e-4df1-adba-1b5d70c9d158" bg-color="#EAE4F1" position-x="61" position-y="72" size-x="107" size-x2="1194" size-y="22" size-y2="733"/>
+    <project uuid="8f1d6786-1bde-4a72-89c8-3652c5827963" size-x="96" size-x2="1494" size-y="0" size-y2="870"/>
+  </visual-data>
+</skipper>
